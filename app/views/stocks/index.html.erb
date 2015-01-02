@@ -1,28 +1,79 @@
-<form method="GET" action="/stocks/index">
-	<input type="text" name="search" class="form" placeholder="Enter Search Category">
-</form>
+<div class="center jumbotron">
 
-<br>
+	<form method="GET" action="/stocks/index">
+		<input type="text" name="search" class="form-control" placeholder="Enter Company Name">
+	</form>
 
+	<br>
 
-<h1>Source: Reuters</h1>
-<h1><%= "#{@company}" %> STOCK INFO:</h1>
+	<div class="title_info">
+		<p class="lead"><%= "#{@company}" %></p>
 
-<% @results.each do |result| %>
+	</div>
 
+	<% @results.each do |result| %>
 
+	<div class="result">
 
+		<p><%= result.css('.priceDetailDate').first.text %></p>
+		<p>Last update - <%= result.css('.priceDetailDate').last.text %></p>
+		<p>Current: $<%= result.css('.valueContentBase').last.text %></p>
+		
+	</div>
 
-<div class="result">
+	<% end %>
 
+	<small class="text-muted">SOURCE: REUTERS</small>
 
-<h1><%= result.css('.priceDetailDate').first.text %></h1>
-<h1>Last update: <%= result.css('.priceDetailDate').last.text %></h1>
-<h1>Current: $<%= result.css('.valueContentBase').last.text %></h1>
-	
-
-</div>
 
 <hr class="split">
 
-<% end %>
+		<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+	  Launch demo modal
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Resume</h4>
+	      </div>
+	      <div class="modal-body">
+         
+<!-- 
+          <h4>Popover in a modal</h4>
+          <p>This <a href="#" role="button" class="btn btn-default popover-test" title="" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">button</a> should trigger a popover on click.</p>
+
+          <h4>Tooltips in a modal</h4>
+          <p><a href="#" class="tooltip-test" title="" data-original-title="Tooltip" data-toggle="tooltip">This link</a> and <a href="#" class="tooltip-test" title="" data-original-title="Tooltip" data-toggle="tooltip">that link</a> should have tooltips on hover.</p> -->
+       
+				
+        
+          <%= image_tag('kreiger_daniel_resume.jpg', id: 'resume', alt: 'Daniel Kreiger Resume') %>
+
+	 		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+<footer class="footer">
+  <small>
+  	<a href="http://www.kreiger.co/">Kreiger.co site</a>
+  </small>
+  <nav>
+    <ul>
+      <li><%= link_to "Music",  "#" %></li>
+      <li><%= link_to "Contact", "#" %></li>
+      <!-- <li><a href="http://www.kreiger.co/">Kreiger.co site</a></li> -->
+    </ul>
+  </nav>
+</footer>
+</div>
