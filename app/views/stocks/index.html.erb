@@ -5,15 +5,20 @@
 <br>
 
 
+<h1>Source: Reuters</h1>
+<h1><%= "#{@company}" %> STOCK INFO:</h1>
+
 <% @results.each do |result| %>
+
 
 
 
 <div class="result">
 
 
-<h1><%= result.css('.priceDetailDate').text %></h1>
-
+<h1><%= result.css('.priceDetailDate').first.text %></h1>
+<h1>Last update: <%= result.css('.priceDetailDate').last.text %></h1>
+<h1>Current: $<%= result.css('.valueContentBase').last.text %></h1>
 	
 
 </div>
