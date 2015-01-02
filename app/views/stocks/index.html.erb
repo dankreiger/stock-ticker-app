@@ -1,0 +1,23 @@
+<form method="GET" action="/stocks/index">
+	<input type="text" name="search" class="form" placeholder="Enter Search Category">
+</form>
+
+<br>
+
+
+<% @results.each do |result| %>
+
+
+
+<div class="result">
+
+
+<h1><%= result.css('.priceDetailDate').text %></h1>
+
+	
+
+</div>
+
+<hr class="split">
+
+<% end %>
