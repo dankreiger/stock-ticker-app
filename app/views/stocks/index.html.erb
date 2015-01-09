@@ -10,14 +10,22 @@
 		<p class="lead"><%= "#{@company}" %></p>
 
 	</div>
-
+	
 	<% @results.each do |result| %>
 
 	<div class="result">
 
+		<% if result.css('.priceDetailDate').first.present? && result.css('.priceDetailDate').last.present? && result.css('.valueContentBase').last.present? %>
+
 		<p><%= result.css('.priceDetailDate').first.text %></p>
 		<p>Last update - <%= result.css('.priceDetailDate').last.text %></p>
 		<p>Current: $<%= result.css('.valueContentBase').last.text %></p>
+		<% else %>
+
+		<%= "Sorry Ol' Chap: Data Unavailable" %>
+
+		<% end %>
+
 		
 	</div>
 
@@ -36,6 +44,8 @@
 <!--   <small>
   	<a href="http://www.kreiger.co/">Kreiger.co site</a>
   </small> -->
+  <iframe src="http://ghbtns.com/github-btn.html?user=dankreiger&repo=stock-ticker-app&type=fork"
+  allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>
   <nav>
     <ul>
       <small><li><a href="http://www.reuters.com">Source - Reuters</a></li></small>

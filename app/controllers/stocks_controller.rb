@@ -11,6 +11,7 @@ class StocksController < ApplicationController
   	@company = search.gsub(/[+]/, " ").upcase
   	dom = Nokogiri::HTML(response.body)
   	@results = dom.css("#headerQuoteContainer")
+    
   end
 end
 
