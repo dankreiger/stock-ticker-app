@@ -18,9 +18,9 @@
 		<% if result.css('.priceDetailDate').first.present? && result.css('.priceDetailDate').last.present? && result.css('.valueContentBase').last.present? %>
 
 		
-		<p><%= result.css('.priceDetailDate').first.text[10..20] %></p>
-		<p>Last update - <%= result.css('.priceDetailDate').last.text %></p>
-		<p>Current: $<%= result.css('.valueContentBase').last.text %></p>
+		<h3><%= result.css('.priceDetailDate').first.text[10..20] %></h3>
+		<h3>Last update - <%= result.css('.priceDetailDate').last.text %></h3>
+		<h3>Current: $<%= result.css('.valueContentBase').last.text %></h3>
 		<% else %>
 
 		<%= "Sorry Ol' Chap: Data Unavailable" %>
