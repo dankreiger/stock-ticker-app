@@ -1,1 +1,3 @@
-<h3>Daniel Kreiger portfolio site</h3>
+<h3>Stock Ticker App</h3>
+
+<h4>Search Stocks by Company Name</h4>
